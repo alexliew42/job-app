@@ -18,6 +18,10 @@ class JobsController < ApplicationController
       active: params[:job][:active],
       salary_range: params[:job][:salary_range]
     )
-    @job.save
+    if @job.save
+      redirect_to "/jobs"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 end
