@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2023_04_27_164258) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +23,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_27_164258) do
     t.string "location"
     t.boolean "active"
     t.string "salary_range"
+=======
+ActiveRecord::Schema[7.0].define(version: 2023_04_27_164651) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+>>>>>>> 63e1aa525a55475c38b0ece8618f472f1440eb9a
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
