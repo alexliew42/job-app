@@ -5,12 +5,14 @@
     <li>
       <%= company.name %>
     </li>
+
     <li>
       <%= company.description %>
     </li>
     <li>
     <img src="<%= company.logo%>"/>
     </li>
+
     
   <% company.jobs.each do |job|%>
     <p> <%= job.title %></p>
@@ -19,7 +21,18 @@
     <p> <%= job.location %></p>
     <p> <%= job.active %></p> 
     <p> <%= job.salary_range %></p>
+
+    <li>
+    <% company.jobs.each do |job|%>
+      <p> <%= job.title %></p>
+      <p> <%= job.description %></p>
+      <p> <%= job.url %></p>
+      <p> <%= job.location %></p>
+      <p> <%= job.active %></p> 
+      <p> <%= job.salary_range %></p>
+
     <%end%>
+    </li>
 
   <% end %>
 </ul>
