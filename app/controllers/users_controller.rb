@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       password: params[:user][:password],
       password_confirmation: params[:user][:password_confirmation],
     )
-    if @user.save
+    if @user.save!
       session[:user_id] = @user.id
       redirect_to "/jobs"
     else
