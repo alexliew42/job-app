@@ -213,11 +213,6 @@ GEM
     zeitwerk (2.6.7)
 
 PLATFORMS
-<<<<<<< HEAD
-  x86_64-darwin-18
-=======
-  arm64-darwin-22
->>>>>>> c5068268105829b7baeb40aa46edd91a479f324a
   x86_64-darwin-22
 
 DEPENDENCIES
