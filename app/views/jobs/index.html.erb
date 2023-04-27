@@ -1,0 +1,9 @@
+<h1>Jobs<h1>
+<%@jobs.each do |job|%>
+  <p><%=job.title%></p>
+  <p><%=job.description%></p>
+  <p><%=job.url%></p>
+  <p><%=job.location%></p>
+  <p><%=job.active%></p>
+<%end%>
+
