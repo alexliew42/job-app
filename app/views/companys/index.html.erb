@@ -6,17 +6,12 @@
       <%= company.name %>
     </li>
     <li>
-    <%= company.logo %>
-    </li>
-    <li>
       <%= company.description %>
     </li>
     <li>
     <img src="<%= company.logo%>"/>
     </li>
-    <li>
-    <%= company.jobs %>
-    </li>
+    
   <% company.jobs.each do |job|%>
     <p> <%= job.title %></p>
     <p> <%= job.description %></p>
