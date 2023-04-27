@@ -1,0 +1,17 @@
+<h1>Index</h1>
+
+<ul>
+  <% @companys.each do |company| %>
+    <li>
+      <%= company.name %>
+    </li>
+    <li>
+    <%= company.logo %>
+    </li>
+    <li>
+      <%= company.description %>
+    </li>
+    <li>
+    <img src="<%= company.logo%>"/>
+  <% end %>
+</ul>
