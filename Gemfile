@@ -73,3 +73,5 @@ end
 
 
 gem 'jwt'
+
+gem "seed_dump"
