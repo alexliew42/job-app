@@ -11,6 +11,16 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+ActiveRecord::Schema[7.0].define(version: 2023_04_27_163931) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "logo"
+    t.string "description"
+=======
+<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2023_04_27_164258) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_27_164651) do
     t.string "email"
     t.string "password_digest"
 >>>>>>> 63e1aa525a55475c38b0ece8618f472f1440eb9a
+>>>>>>> 45b35ef3ed2331400ddf1802071ac182a0604c92
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
