@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   def index
+    p current_user
     @jobs = Job.all
     render :index
   end
