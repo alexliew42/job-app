@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  before_action :authenticate_admin, except: [:index]
   def index
     p current_user
     @jobs = Job.all
@@ -17,7 +18,8 @@ class JobsController < ApplicationController
       url: params[:job][:url],
       location: params[:job][:location],
       active: params[:job][:active],
-      salary_range: params[:job][:salary_range]
+      salary_range: params[:job][:salary_range],
+      company_id: params[:job][:company_id]
     )
     if @job.save
       redirect_to "/jobs"
