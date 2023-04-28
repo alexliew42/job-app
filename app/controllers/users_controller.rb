@@ -6,14 +6,17 @@ class UsersController < ApplicationController
       password: params[:user][:password],
       password_confirmation: params[:user][:password_confirmation],
     )
-    if user.save
+    if @user.save
       render json: { message: "User created successfully" }, status: :created
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-
+  def new
+    @user = User.new
+    render template: "users/new"
+  end
 
 
 
