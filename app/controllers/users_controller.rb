@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+
+
+  def new
+    @user = User.new
+    render template: "users/new"
+  end
+
+
   def create
     @user = User.new(
       name: params[:user][:name],
@@ -12,6 +20,7 @@ class UsersController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
 
   def new
     @user = User.new
