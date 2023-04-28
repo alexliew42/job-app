@@ -1,17 +1,21 @@
 <h1>Jobs<h1>
 <%@jobs.each do |job|%>
   
-  <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Job title<p><%=job.title%></p></h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary">Description<p><%=job.description%></p></h6>
-    <p class="card-text">Location<p><%=job.location%></p>Open position
-    <p><%=job.active%></p>
-  </p>
-    <a href="#" class="card-link"><p><%=job.url%></p></a>
+  <div class="card">
+    <h5 class="card-header"><%=job.title%></h5>
+    <div class="card-body">
+      <%if job.company_id == nil%>
+        <p class="card-text"><%=job.description%></p>
+        <p style="font-size: 20px; font-style: italic;">Salary Range: <%=job.salary_range%></p>
+        <a href="<%=job.url%>" class="btn btn-primary">Go to Website</a>
+      <%else%>
+        <h5 class="card-title"><%=Company.find_by(id: job.company_id).name%></h5>
+        <p class="card-text"><%=job.description%></p>
+        <p style="font-size: 20px; font-style: italic;">Salary Range: <%=job.salary_range%></p>
+        <a href="<%=job.url%>" class="btn btn-primary">Apply Here</a>
+      <%end%>
+    </div>
   </div>
-</div>
-  
   
   
   
