@@ -1,4 +1,7 @@
 <h1>Jobs<h1>
+<% if current_user && current_user.admin%>
+  <a href="/jobs/new">Create Job</a>
+<%end%>
 <%@jobs.each do |job|%>
   
   <div class="card">
