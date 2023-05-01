@@ -11,8 +11,8 @@
 
 <% @companys.each do |company| %>
   
-
-<p class="fw-medium"><%= company.name %></p>
+<img src="<%= company.logo%>" class ="logo">
+<p class="fw-medium" style="font-size: 30px;"><%= company.name %></p>
     
 
 <p class="fw-medium"><%= company.description %></p>
@@ -25,7 +25,6 @@ height: 100px;
 }
 </style>
     
-<img src="<%= company.logo%>" class ="logo">
 
  <% end %>
 
