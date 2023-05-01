@@ -1,43 +1,33 @@
-<h1>New Job</h1>
-
-<%= form_with model: @job do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
-  </div>
-
-   <div>
-    <%= form.label :url %><br>
-    <%= form.text_area :url %>
-  </div>
-
-   <div>
-    <%= form.label :location %><br>
-    <%= form.text_area :location %>
-  </div>
-
-   <div>
-    <%= form.label :active %><br>
-    <%= form.text_area :active %>
-  </div>
-
-   <div>
-    <%= form.label :salary_range %><br>
-    <%= form.text_area :salary_range %>
-  </div>
-
-  <div>
-    <%= form.label :company_id %><br>
-    <%= form.text_area :company_id %>
-  </div>
-
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+<h1><span class="badge text-bg-primary">New job:</span></h1>
+ 
+  <%= form_with model: @job, class: "form" do |f| %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :url %>
+      <%= f.text_field :url, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :location %>
+      <%= f.text_field :location, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :active %>
+      <%= f.check_box :active, class: "form-check-input" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :salary_range %>
+      <%= f.text_field :salary_range, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :company_id %>
+      <%= f.collection_select :company_id, Company.all, :id, :name, {prompt: "Select a company"}, {class: "form-control"} %>
+    </div>
+    <%= f.submit "Create Job", class: "btn btn-primary" %>
+  <% end %>
