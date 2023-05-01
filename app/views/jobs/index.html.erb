@@ -5,16 +5,16 @@
 <%@jobs.each do |job|%>
   
   <div class="card">
-    <h5 class="card-header"><%=job.title%></h5>
+    <h5 class="card-header" style="font-weight: bold;"><%=job.title%></h5>
     <div class="card-body">
       <%if job.company_id == nil%>
-        <p class="card-text"><%=job.description%></p>
+        <p class="card-text" style="font-size: 15px;"><%=job.description%></p>
         <p style="font-size: 20px; font-style: italic;">Salary Range: <%=job.salary_range%></p>
         <a href="<%=job.url%>" class="btn btn-primary">Go to Website</a>
       <%else%>
-        <h5 class="card-title"><%=Company.find_by(id: job.company_id).name%></h5>
-        <p class="card-text"><%=job.description%></p>
-        <p style="font-size: 20px; font-style: italic;">Salary Range: <%=job.salary_range%></p>
+        <h5 class="card-title" style="font-style: bold;"><%=Company.find_by(id: job.company_id).name%> </h5>
+        <p class="card-text" style="font-size: 15px;"><%=job.description%></p>
+        <p style="font-size: 20px; font-weight: italic;">Salary Range: <%=job.salary_range%></p>
         <a href="<%=job.url%>" class="btn btn-primary">Apply Here</a>
       <%end%>
     </div>
