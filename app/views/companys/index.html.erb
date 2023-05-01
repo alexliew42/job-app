@@ -1,26 +1,38 @@
-<h1>Companies</h1>
-<a href="/companys/1">Microsoft</a>
-<ul>
-  <% @companys.each do |company| %>
-    <li>
-      <%= company.name %>
-    </li>
-    <li>
-      <%= company.description %>
-    </li>
-    <li>
-    <img src="<%= company.logo%>"/>
-    </li>
-    <li>
-    <% company.jobs.each do |job|%>
-      <p> <%= job.title %></p>
-      <p> <%= job.description %></p>
-      <p> <%= job.url %></p>
-      <p> <%= job.location %></p>
-      <p> <%= job.active %></p> 
-      <p> <%= job.salary_range %></p>
-    <%end%>
-    </li>
 
-  <% end %>
-</ul>
+<div class="p-3 mb-2 bg-info-subtle text-black
+">
+<h1> Companies:</h1>
+
+
+
+
+
+
+
+<% @companys.each do |company| %>
+  
+
+<p class="fw-medium"><%= company.name %></p>
+    
+
+<p class="fw-medium"><%= company.description %></p>
+<h4><a href="/companys/1">Open Positions</a>.</h4>
+    
+<style>
+.logo {
+width: 100px;
+height: 100px;
+}
+</style>
+    
+<img src="<%= company.logo%>" class ="logo">
+
+ <% end %>
+
+
+
+
+
+
+ 
+ 

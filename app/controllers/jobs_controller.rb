@@ -1,5 +1,8 @@
 class JobsController < ApplicationController
+
+
   before_action :authenticate_admin, except: [:index, :show]
+
   def index
     p current_user
     @jobs = Job.all
