@@ -1,14 +1,17 @@
 <h1>Login</h1>
-<%= form_with method: "post", url: "/sessions" do |form| %>
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email %>
+<form action="/sessions" method="post">
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
   </div>
-  <div>
-    <%= form.submit "Submit" %>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Remember my Password</label>
   </div>
-<% end%>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
