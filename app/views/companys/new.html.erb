@@ -1,20 +1,21 @@
-New Company
+<h1>New Company</h1>
 
-<%= form_with model: @company do |form|
+<%= form_with model: @company do |form| %>
   <div>
   <%= form.label :name %> 
   <%= form.text_field :name %>
-  <div>
+  </div>
   <div>
   <%= form.label :logo %> 
   <%= form.text_field :logo %>
-  <div>
+  </div>
   <div>
   <%= form.label :description %> 
   <%= form.text_field :description %>
-  <div>
+  </div>
 
   <div>
   <%= form.submit %>
-  <div>
-end
+  </div>
+<% end %>
+

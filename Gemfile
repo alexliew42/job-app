@@ -77,3 +77,4 @@ gem "seed_dump"
 
 gem "bcrypt", "~> 3.1.7"
 
+

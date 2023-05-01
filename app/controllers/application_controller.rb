@@ -16,5 +16,11 @@ class ApplicationController < ActionController::Base
     redirect_to '/login', status: :see_other unless current_user
   end
 
+  def authenticate_admin
+    unless current_user && current_user.admin
+      render json: {messsage: "Request Denied"}, status: :unauthorized
+    end
+  end
+
 
 end
