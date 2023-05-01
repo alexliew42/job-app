@@ -1,9 +1,21 @@
 <h1>Jobs<h1>
 <%@jobs.each do |job|%>
-  <p><%=job.title%></p>
-  <p><%=job.description%></p>
-  <p><%=job.url%></p>
-  <p><%=job.location%></p>
-  <p><%=job.active%></p>
+  
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Job title<p><%=job.title%></p></h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Description<p><%=job.description%></p></h6>
+    <p class="card-text">Location<p><%=job.location%></p>Open position
+    <p><%=job.active%></p>
+  </p>
+    <a href="#" class="card-link"><p><%=job.url%></p></a>
+  </div>
+</div>
+  
+  
+  
+  
+  
+
 <%end%>
 

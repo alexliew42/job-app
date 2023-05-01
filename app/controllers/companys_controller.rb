@@ -1,4 +1,6 @@
 class CompanysController < ApplicationController
+  before_action :authenticate_admin, except: [:index]
+ 
   def index
     @companys = Company.all
   end
@@ -8,13 +10,19 @@ class CompanysController < ApplicationController
     render :show
   end
   
+  def new
+    @company = Company.new
+    render :new
+  end
+
   def create
     @company = Company.new(
     name: params[:company][:name],
     logo: params[:company][:logo],
-    description: [:company][description]
+    description: params[:company][:description]
     )
-    @company..save
+    @company.save
     redirect_to "/company/#{@company.id}"
+    render :new
   end
 end

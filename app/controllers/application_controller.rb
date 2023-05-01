@@ -1,9 +1,4 @@
 class ApplicationController < ActionController::Base
-  def authenticate_admin
-    unless current_user && current_user.admin
-      render json: {messsage: "Request Denied"}, status: :unauthorized
-    end
-  end
   protect_from_forgery with: :exception, unless: -> { request.format.json? }
 
 
@@ -14,6 +9,12 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user
     redirect_to '/login', status: :see_other unless current_user
+  end
+
+  def authenticate_admin
+    unless current_user && current_user.admin
+      render json: {messsage: "Request Denied"}, status: :unauthorized
+    end
   end
 
 

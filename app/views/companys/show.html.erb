@@ -1,26 +1,43 @@
-<h1><%= @company.name %></h1>
 
-<p><%= @company.description %></p>
 
-<li>
-<img src="<%= @company.logo%>"/>
-</li>
+<div class="p-3 mb-2 bg-secondary-subtle text-emphasis-secondary">
 
-</li>
+<h1><span class="badge text-bg-info">Positions:</span></h1>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
 
-    
+
   <% @company.jobs.each do |job|%>
-    <p> <%= job.title %></p>
-    <p> <%= job.description %></p>
-    <p> <%= job.url %></p>
-    <p> <%= job.location %></p>
-    <p> <%= job.active %></p> 
-    <p> <%= job.salary_range %></p>
+  <tr>
+  <table style="width:100%">
 
-    <li>
+  
+  <div class="card-header"><th><span class="badge text-bg-primary">Position:</th≥
+    <style></div>
+
+    <th><span class="badge text-bg-primary">Description:</th>
+    <th><span class="badge text-bg-primary">Location:</th>
+    <th><span class="badge text-bg-primary">Active:</th>
+    <th><span class="badge text-bg-primary">Salary:</th></div>
+  </tr>
+  <tr>
+    <td><%= job.title %></td>
+    <td><%= job.description %></td>
+    <td><%= job.location %></td>
+    <th><mark><%= job.active %></mark></th>
+    <th><%= job.salary_range %></th>
+  </tr>
+  
+
+
+
   
 
   
 
 
 <%end%>
+</div>
